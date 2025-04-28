@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/tt-cities-project/static/css/main.67b73493.css",
+    "main.js": "/tt-cities-project/static/js/main.d6ee68de.js",
+    "index.html": "/tt-cities-project/index.html",
+    "main.67b73493.css.map": "/tt-cities-project/static/css/main.67b73493.css.map",
+    "main.d6ee68de.js.map": "/tt-cities-project/static/js/main.d6ee68de.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.67b73493.css",
+    "static/js/main.d6ee68de.js"
+  ]
+}
