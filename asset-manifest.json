@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/tt-cities-project/static/css/main.67b73493.css",
-    "main.js": "/tt-cities-project/static/js/main.d6ee68de.js",
+    "main.js": "/tt-cities-project/static/js/main.790e7d93.js",
     "index.html": "/tt-cities-project/index.html",
     "main.67b73493.css.map": "/tt-cities-project/static/css/main.67b73493.css.map",
-    "main.d6ee68de.js.map": "/tt-cities-project/static/js/main.d6ee68de.js.map"
+    "main.790e7d93.js.map": "/tt-cities-project/static/js/main.790e7d93.js.map"
   },
   "entrypoints": [
     "static/css/main.67b73493.css",
-    "static/js/main.d6ee68de.js"
+    "static/js/main.790e7d93.js"
   ]
 }
