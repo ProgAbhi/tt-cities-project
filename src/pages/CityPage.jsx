@@ -16,6 +16,8 @@ function formatName(name) {
 const CityPage = () => {
   const { id } = useParams(); // id is the region name
   const [cities, setCities] = useState([]);
+  const [filteredCities, setFilteredCities] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
@@ -27,6 +29,7 @@ const CityPage = () => {
       const regionCities = regionsData[id];
       if (regionCities) {
         setCities(regionCities);
+        setFilteredCities(regionCities);
       } else {
         setError('Region not found');
       }
@@ -36,6 +39,16 @@ const CityPage = () => {
       setLoading(false);
     }
   }, [id]);
+
+  const handleSearch = (e) => {
+    const value = e.target.value.toLowerCase();
+    setSearchTerm(value);
+
+    const filtered = cities.filter(city => 
+      city.name.toLowerCase().includes(value)
+    );
+    setFilteredCities(filtered);
+  };
   
   if (loading) {
     return <div style={{ textAlign: 'center', marginTop: '2rem' }}>Loading...</div>;
@@ -64,10 +77,17 @@ const CityPage = () => {
       </div>
       
       <h2 className='city-heading'>List of Cities in {formatName(id)}</h2>
+      <input
+        type="text"
+        placeholder="Search for a city..."
+        value={searchTerm}
+        onChange={handleSearch}
+        className="searchInput"
+      />
 
       <ul className="city-list">
-        {cities.length > 0 ? (
-          cities.map((city, index) => (
+        {filteredCities.length > 0 ? (
+          filteredCities.map((city, index) => (
             <li key={index} className="city-item" onClick={() => {
                 if (city && city.name) {
                   navigate(`/city/${city.name.toLowerCase().replace(/\s+/g, '-')}`);
